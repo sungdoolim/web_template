@@ -61,8 +61,59 @@ background-position:center;
 	
 
 
+
+
+
+
+
+
+<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span>
+			&nbsp;&nbsp;최신 강의 목록</h3>	
+		</div>
+		<div class="panel-body">
+			<div class="media"><!-- 사진이나 동영상을 담는 클래스 -->
+				<div class="media-left">
+					<a href="lecture.jsp?lectureName=C"><img class="media-object" src="images/apple.png" alt="c언어 강의 이미지"></a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading"> <a href="lecture.jsp?lectureName=C">c언어 기초 강의&nbsp;<span class="badge">New</span></a></h4>
+				c언어는 포인터가 어렵습니다아아아아아ㅏㅏ앙으아
+				</div>
+			 </div><hr>
+			 <div class="media">
+				<div class="media-left">
+					<a href="lecture.jsp?lectureName=Java"><img class="media-object" src="images/apple.png" alt="자바 강의 이미지"></a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading"> <a href="lecture.jsp?lectureName=Java">자바 기초 강의&nbsp;<span class="badge">New</span></a></h4>
+				자바는 멀티 쓰레드가 어렵습니다아아아아아ㅏㅏ앙으아
+				</div>
+			 </div><hr>
+			 <div class="media">
+				<div class="media-left">
+					<a href="lecture.jsp?lectureName=Android"><img class="media-object" src="images/apple.png" alt="안드로이드 강의 이미지"></a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading"> <a href="lecture.jsp?lectureName=Android">안드로이드&nbsp;<span class="badge">New</span></a></h4>
+				안드로이드는 db연결이 어려우어요오ㅗ오오
+				</div>
+			 </div>
+		</div>
+	
+	</div>
+		
+
+
+
+
+
+
 	
 </div>
+
+
 <div class="footer">
 <%@include file="footer.jsp"%>
 </div>
