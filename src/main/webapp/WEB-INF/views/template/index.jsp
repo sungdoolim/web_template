@@ -49,10 +49,10 @@ background-position:center;
 	<h1 class="text-center">${bank.getBname() }</h1>
 	<p class="text-center">${bank.getBrest() }</p>	
 	<c:if test="${Siscouncil>='1' }">
-	<center><button onclick="location='/web/purchase'">구매 내역 등록하기</button></center>
+	<center><button onclick="location='/web/purchase.do'">구매 내역 등록하기</button></center>
 	
 	</c:if>
-	<center><button onclick="location='/web/blistall'">회비 입출 내역 보기</button></center>
+	<center><button onclick="location='/web/blistall.do'">회비 입출 내역 보기</button></center>
 	</c:if>
 
 	

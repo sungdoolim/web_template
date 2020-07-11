@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
-		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
-		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
@@ -22,16 +24,16 @@
 			<bean id="dataSource"
 	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
-	value="oracle.jdbc.OracleDriver"/>
+	value="com.mysql.cj.jdbc.Driver"/>
 	<!--  value="oracle.jdbc.OracleDriver"     com.mysql.cj.jdbc.Driver-->
 		
 		<property name="url"
-		value="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+		value="jdbc:mysql://localhost:3306/staris?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"
 		/><!-- jdbc:oracle:thin:@127.0.0.1:1521:xe
 		value="jdbc:mysql://13.125.206.73:3306/db1?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC" -->
 <!-- 13.125.206.73:3306/db1? --><!-- odyssey -->
-		<property name="username" value="zx9"/><!--원래 day / 1234 -->
-		<property name="password" value="day"/>	<!--원래 zx9 / day -->
+		<property name="username" value="staris"/><!--원래 day / 1234 -->
+		<property name="password" value="6Is4kBL7rF0{"/>	<!--원래 zx9 / day -->
 	</bean>	
 		<!-- myvatis 와 spring연결 설정 작업 mybatis 환경 설정-->
 		

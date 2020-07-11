@@ -23,11 +23,11 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index">Every dongguk</a>
+			<a class="navbar-brand" href="index.do">Every dongguk</a>
 			
 			<c:if test="${Siscouncil==10}">
-			<a class="navbar-brand" href="userall">유저 권한 관리</a>
-			<a class="navbar-brand" href="bankall">단과별 학생회비 계좌 관리</a>
+			<a class="navbar-brand" href="userall.do">유저 권한 관리</a>
+			<a class="navbar-brand" href="bankall.do">단과별 학생회비 계좌 관리</a>
 			
 			</c:if>
 		</div>	
@@ -42,12 +42,12 @@
 					
 					<c:choose>
 					<c:when test="${empty Sid }">
-						<li><a href="login_form">로그인</a></li>
-						<li><a href="register_form">회원가입</a></li>	
+						<li><a href="login_form.do">로그인</a></li>
+						<li><a href="register_form.do">회원가입</a></li>	
 					</c:when>
 					<c:otherwise>
-						<li><a href="logout">로그아웃</a></li>
-						<li><a href="mypage">마이페이지(${Sid})</a></li>
+						<li><a href="logout.do">로그아웃</a></li>
+						<li><a href="mypage.do">마이페이지(${Sid})</a></li>
 						</c:otherwise>
 						</c:choose>
 					
