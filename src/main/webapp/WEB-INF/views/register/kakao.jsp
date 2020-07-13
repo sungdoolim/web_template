@@ -52,19 +52,19 @@
 
                         // @breif 닉네임
 
-                       // document.getElementById( "kakaoNickName" ).innerHTML = res.properties.nickname;
+                        document.getElementById( "kakaoNickName" ).innerHTML = res.properties.nickname;
 
 
 
                         // @breif 프로필 이미지
 
-                        document.getElementById( "kakaoProfileImg" ).src = res.properties.profile_image;
+                     //   document.getElementById( "kakaoProfileImg" ).src = res.properties.profile_image;
 
 
 
                         // @breif 썸네일 이미지
 
-                        document.getElementById( "kakaoThumbnailImg" ).src = res.properties.thumbnail_image;
+                      //  document.getElementById( "kakaoThumbnailImg" ).src = res.properties.thumbnail_image;
 
 
 
@@ -94,7 +94,11 @@
 
 <body>
 
-    <div>카카오 아이디 : <span id="kakaoIdentity"></span></div>
+    <div>kakao id: <span id="kakaoIdentity"></span></div>
+
+    <div>kakao nick: <span id="kakaoNickName"></span></div>
+
+
 
 
     <br/>
