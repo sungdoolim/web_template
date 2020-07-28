@@ -28,12 +28,13 @@
 	<!--  value="oracle.jdbc.OracleDriver"     com.mysql.cj.jdbc.Driver-->
 		
 		<property name="url"
-		value="jdbc:mysql://localhost:3306/staris?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"
+		value="jdbc:oracle:thin:@127.0.0.1:1521:xe"
 		/><!-- jdbc:oracle:thin:@127.0.0.1:1521:xe
+		홍쓰넷 : jdbc:mysql://localhost:3306/staris?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC
 		value="jdbc:mysql://13.125.206.73:3306/db1?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC" -->
 <!-- 13.125.206.73:3306/db1? --><!-- odyssey -->
-		<property name="username" value="staris"/><!--원래 day / 1234 -->
-		<property name="password" value="6Is4kBL7rF0{"/>	<!--원래 zx9 / day -->
+		<property name="username" value="zx9"/><!--원래 day / 1234 --><!-- 홍 : staris -->
+		<property name="password" value="day"/>	<!--원래 zx9 / day --><!-- 홍 : 6Is4kBL7rF0{ -->
 	</bean>	
 		<!-- myvatis 와 spring연결 설정 작업 mybatis 환경 설정-->
 		

@@ -36,6 +36,11 @@
 <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 <version>1.16</version>
 </dependency>
+<dependency>
+	<groupId>com.github.scribejava</groupId>
+	<artifactId>scribejava-core</artifactId>
+	<version>2.8.1</version>
+</dependency><!-- 네이버라는데??? -->
  
 <dependency>
     <groupId>commons-io</groupId>

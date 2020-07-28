@@ -32,7 +32,20 @@ public class HomeController {
 		return "/template/index";
 	}
 	
-	
+	@RequestMapping("/naverToAnd.do")
+	public @ResponseBody String naverToAnd(String name,String id) {
+		System.out.println("getpw");
+		System.out.println(id);System.out.println(name);
+			 JSONObject jsonMain = new JSONObject(); // json 
+			 String pwd="Abdeok odielswo dj244 d";
+			 jsonMain.put("Bpw", pwd);
+			 jsonMain.put("Bid","hihello");
+			// System.out.println(pwd);		
+	  
+				
+				return jsonMain.toJSONString();
+				
+	}
 	@RequestMapping("/androidtest.do")
 	public @ResponseBody String andr(String id,String pw) {
 		System.out.println("오오ㅗ오오오오ㅗ오오");

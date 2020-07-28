@@ -19,8 +19,9 @@
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
-	</beans:bean>
 	
+	</beans:bean>
+	<beans:bean id="naverLoginBO" class="naver.NaverLoginBO" />
 	<context:component-scan base-package="zx9.web.controller" />
 	
 	

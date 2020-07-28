@@ -1,4 +1,12 @@
 
+
+create table mydiaryuser (age number,dimg number, memo varchar(20),name varchar(20),phone varchar(20),year number)
+
+
+select * from mydiaryuser
+
+
+create table Blist_per(Bid varchar2(30),Bdate date,Brest number(20),Binout number(20),Buser varchar2(20));
 select * from bank;
 delete from bank where brest=0
 select * from blist where  bid='3456' order by bsequence desc;
