@@ -4,14 +4,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.http.HttpRequest;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.github.scribejava.core.model.OAuth2AccessToken;
 
 import pwchange.bouncy_change;
 import zx9.web.dao.UserDao;
@@ -33,13 +39,23 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/naverToAnd.do")
-	public @ResponseBody String naverToAnd(String name,String id) {
-		System.out.println("getpw");
-		System.out.println(id);System.out.println(name);
+	public @ResponseBody String naverToAnd(String name,String id,HttpServletRequest request ) {
+		System.out.println("ntoand");
+		System.out.println(id);
+		System.out.println(name);
+		HttpSession session=request.getSession();
+		session.setAttribute("bid", id);
+		session.setAttribute("bname", name);
+	//	Object result= session.getAttribute("result");
+		
+	//	String rid=((OAuth2AccessToken) result).getParameter("name");
+	//	System.out.println("rerid : "+ rid);
+				
+		
 			 JSONObject jsonMain = new JSONObject(); // json 
-			 String pwd="Abdeok odielswo dj244 d";
-			 jsonMain.put("Bpw", pwd);
-			 jsonMain.put("Bid","hihello");
+			
+			 jsonMain.put("Bpw", name);
+			 jsonMain.put("Bid",id);
 			// System.out.println(pwd);		
 	  
 				
@@ -84,13 +100,22 @@ public class HomeController {
         return jsonMain.toJSONString();
 	}
 	@RequestMapping("/andtest.do")
-	public @ResponseBody String andtest(String id,String pw, HttpServletResponse response) throws IOException {
-		System.out.println("getpw");
-		System.out.println(id);System.out.println(pw);
+	public @ResponseBody String andtest(String id,String pw, HttpServletResponse response,HttpServletRequest request ) throws IOException {
+		System.out.println("andtest");
+		HttpSession session=request.getSession();
+		String bid= session.getAttribute("bid").toString();
+		String name= session.getAttribute("bname").toString();
+		
+		System.out.println(bid);
+		System.out.println(name);
 			 JSONObject jsonMain = new JSONObject(); // json 
-			 String pwd="Abdeok odielswo dj244 d";
-			 jsonMain.put("Bpw", pwd);
-			 jsonMain.put("Bid","hihello");
+		//	 String pwd="Abdeok odielswo dj244 d";
+			 
+			 
+			 
+			 
+			 jsonMain.put("Bpw", name);
+			 jsonMain.put("Bid",bid);
 			// System.out.println(pwd);		
 	  
 				

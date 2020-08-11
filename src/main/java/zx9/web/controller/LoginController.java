@@ -5,6 +5,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.http.HttpResponse;
@@ -35,7 +36,7 @@ public class LoginController {
 //kakao
  
     private final static String id = "bd58f9efb5e4c0637a9ddfa8c81a3920"; //kakao
-    private final static String url ="http://localhost:8052/web/kakaoLogin.do"; //kakao
+    private final static String url ="http://192.168.56.1:8052/web/kakaoLogin.do"; //kakao
     
     @RequestMapping(value = "/login.do")//kakao
     public String loginview(Model model, HttpSession session) {
@@ -135,31 +136,41 @@ public class LoginController {
 
 	//로그인 첫 화면 요청 메소드
 	@RequestMapping(value = "/nlogin.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String login(Model model, HttpSession session) {
+	public String login(String id,Model model, HttpSession session) {
 		
+		System.out.println(id);
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
 		
 		//https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=sE***************&
 		//redirect_uri=http%3A%2F%2F211.63.89.90%3A8090%2Flogin_project%2Fcallback&state=e68c269c-5ba9-4c31-85da-54c16c658125
 		System.out.println("네이버:" + naverAuthUrl);
-		
+		//naverAuthUrl=naverAuthUrl.replaceAll("https", "http");
+		//System.out.println(naverAuthUrl);
 		//네이버 
 		model.addAttribute("url", naverAuthUrl);
-
+		
 		/* 생성한 인증 URL을 View로 전달 */
-		return "/register/login_naver";
+		return "redirect:"+naverAuthUrl;
+		//return "/register/login_naver";
 	}
 
 	//네이버 로그인 성공시 callback호출 메소드
 	@RequestMapping(value = "/callback.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session,HttpServletRequest request)
 			throws IOException {
+	//	 HttpSession sess=request.getSession();
 		System.out.println("여기는 callback");
 		OAuth2AccessToken oauthToken;
+		System.out.println(code);
+		System.out.println(state);
+
         oauthToken = naverLoginBO.getAccessToken(session, code, state);
         //로그인 사용자 정보를 읽어온다.
 	    apiResult = naverLoginBO.getUserProfile(oauthToken);
+	 //   System.out.println(apiResult.);
+	    
+	  //  sess.setAttribute("result", apiResult);
 		model.addAttribute("result", apiResult);
 
         /* 네이버 로그인 성공 페이지 View 호출 */
