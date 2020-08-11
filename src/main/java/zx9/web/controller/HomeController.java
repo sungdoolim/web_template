@@ -103,8 +103,8 @@ public class HomeController {
 	public @ResponseBody String andtest(String id,String pw, HttpServletResponse response,HttpServletRequest request ) throws IOException {
 		System.out.println("andtest");
 		HttpSession session=request.getSession();
-		String bid= session.getAttribute("bid").toString();
-		String name= session.getAttribute("bname").toString();
+		String bid= (String)session.getAttribute("bid");
+		String name= (String)session.getAttribute("bname");
 		
 		System.out.println(bid);
 		System.out.println(name);

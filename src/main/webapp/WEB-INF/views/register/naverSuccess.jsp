@@ -24,13 +24,30 @@ h3 {
 <script type="text/javascript">
 var name = ${result}.response.name;
 var id = ${result}.response.id;
+function CallAndroid(){
+
+	var broswerInfo = navigator.userAgent;	
+
+	if(broswerInfo.indexOf("Android")>-1) {
+//alert("if")
+	window.MyTestApp.AlertMsg(name+" "+id);
+
+
+	}//alert("???")
+
+	}
+
 	$(document).ready(function() {
 	
 		$("#name").html("환영합니다. "+name+"님");
 		$("#email").html(email);
+
 	  });
-	alert("환영합니다. "+name+"님");
-	alert("환영합니다. "+id+"님");
+	CallAndroid()
+	
+	//alert("환영합니다. "+name+"님");
+	//alert("환영합니다. "+id+"님");
+	
 	
 location='/web/naverToAnd.do?name='+name+'&id='+id;
 </script>

@@ -23,8 +23,24 @@
 <!-- 네이버 로그인 화면으로 이동 시키는 URL -->
 <!-- 네이버 로그인 화면에서 ID, PW를 올바르게 입력하면 callback 메소드 실행 요청 -->
 <div id="naver_id_login" style="text-align:center">
-<a href="${url}">냐옹</a>
-<a href="/web/nlogout.do">멍멍</a>
+<script>
+
+function CallAndroid(){
+
+	var broswerInfo = navigator.userAgent;	
+
+	if(broswerInfo.indexOf("Android")>-1) {
+	//alert("if")
+	window.MyTestApp_logout.AlertMsg_logout("logout!!!!");
+
+
+	}//alert("???")
+
+	}
+	CallAndroid()
+
+</script>
+<b href="#">로그아웃 됬어요</a>
 </div>
 <br>
 </body>
