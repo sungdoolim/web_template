@@ -157,7 +157,6 @@ public class LoginController {
 	@RequestMapping(value = "/nlogout.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String logout(String id,Model model, HttpSession session,HttpServletRequest request) {
 		
-		request.getSession().invalidate();
 		session.invalidate();
 	
 		return "/register/logout_naver";

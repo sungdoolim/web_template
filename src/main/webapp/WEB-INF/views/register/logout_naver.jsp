@@ -38,7 +38,8 @@ function CallAndroid(){
 
 	}
 	CallAndroid()
-
+	alert("로그아웃 됬어요")
+location='/web/nlogin.do';
 </script>
 <b href="#">로그아웃 됬어요</a>
 </div>

@@ -22,7 +22,7 @@ public class NaverLoginBO {
 		//state: 애플리케이션이 생성한 상태 토큰
 		private final static String CLIENT_ID = "cNRaBGpTcpzIQMv8aWuB";
 	    private final static String CLIENT_SECRET = "It47BDxH0G";
-	    private final static String REDIRECT_URI = "http://172.30.1.8:8052/web/callback.do";// 
+	    private final static String REDIRECT_URI = "http://172.30.1.8:8052/web/callback.do";// http://172.30.1.8:8052/web/callback.do
 	   // private final static String REDIRECT_URI = "http://192.168.56.1:8052/web/callback.do";// //http://staris.freehongs.net/web/callback.do
 	    
 	    private final static String SESSION_STATE = "oauth_state";
