@@ -1,6 +1,7 @@
 package zx9.web.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.tensorflow.Graph;
+import org.tensorflow.SavedModelBundle;
+import org.tensorflow.Session;
+import org.tensorflow.Tensor;
+import org.tensorflow.TensorFlow;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
@@ -37,6 +43,30 @@ public class HomeController {
 
 		return "/template/index";
 	}
+//	@RequestMapping("/tense.do")
+//	public String tense() throws UnsupportedEncodingException {
+//		
+//	    try (SavedModelBundle b=SavedModelBundle.load("C:/Users/bohee/Desktop", "saved_model.pb")){
+//	    	Session sess=b.session();
+//	    	Tensor x=Tensor.create(2);
+//	    	float[][]y=sess.runner()
+//	    			.feed("온도", x)
+//	    			.fetch("판매량")
+//	    			.run()
+//	    			.get(0)
+//	    			.copyTo(new float[2][1]);
+//	    	
+//	    	for(int i=0;i<y.length;i++) {
+//	    		System.out.println(y[i][0]);
+//	    	}
+//	    	
+//	    	
+//	    }catch(Exception e) {
+//	    	
+//	    }
+//		//C:\Users\bohee\Desktop
+//		return "";
+//	}
 	
 	@RequestMapping("/naverToAnd.do")
 	public @ResponseBody String naverToAnd(String name,String id,HttpServletRequest request ) {
