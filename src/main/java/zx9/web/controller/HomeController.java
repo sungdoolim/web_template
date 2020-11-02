@@ -92,7 +92,25 @@ public class HomeController {
 				return jsonMain.toJSONString();
 				
 	}
-	@RequestMapping("/androidtest.do")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping("/androidtest.do")// 리스트를 보내기
 	public @ResponseBody String andr(String id,String pw) {
 		System.out.println("오오ㅗ오오오오ㅗ오오");
 		System.out.println(id+","+pw);
@@ -102,25 +120,18 @@ public class HomeController {
         // {sendData:[{변수명:값},{변수명:값},...]}
         List<UserVO> items = new ArrayList<>();
         JSONArray jArray = new JSONArray(); // json배열
-        
-        
-    	for(int i=0;i<10;i++) {
+        	for(int i=0;i<10;i++) {
     		UserVO vo=new UserVO();
 			vo.setSid(""+i);
 			vo.setSname("sejong");
-		
 			items.add(vo);
-		}
-    	
-    	
+		}    	
         for(int i=0; i<items.size(); i++){
         	UserVO dto = items.get(i);
             JSONObject row = new JSONObject();
             // json객체.put("변수명",값)
-       
             row.put("f", dto.getSid());
             row.put("l", dto.getSname());
-      
             // 배열에 추가
             // json배열.add(인덱스,json객체)
             jArray.add(i,row);
@@ -129,7 +140,7 @@ public class HomeController {
         jsonMain.put("sendData", jArray);
         return jsonMain.toJSONString();
 	}
-	@RequestMapping("/andtest.do")
+	@RequestMapping("/andtest.do")// 단일 값들 보내기
 	public @ResponseBody String andtest(String id,String pw, HttpServletResponse response,HttpServletRequest request ) throws IOException {
 		System.out.println("andtest");
 		HttpSession session=request.getSession();
@@ -140,19 +151,18 @@ public class HomeController {
 		System.out.println(name);
 			 JSONObject jsonMain = new JSONObject(); // json 
 		//	 String pwd="Abdeok odielswo dj244 d";
-			 
-			 
-			 
-			 
 			 jsonMain.put("Bpw", name);
 			 jsonMain.put("Bid",bid);
+			 jsonMain.put("test","test");
 			// System.out.println(pwd);		
-	  
-				
 				return jsonMain.toJSONString();
-				
 		//	return jsonMain;
-	
 	}
+	
+	
+	
+	
+	
+	
 	
 }
